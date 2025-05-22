@@ -2,13 +2,16 @@
 const display = document.getElementById('dText');
 const keys = document.querySelectorAll('.keys');
 const operators = ['-','*','/','+'];
+let evaluated = false;
 
 keys.forEach(key => {
     key.addEventListener('click', () => {
         const selected = key.textContent;
 
-        if (display.textContent == 'ERROR') {
+        if (display.textContent == 'ERROR' || evaluated === true) {
+            //if error or result is displayed, clear display
             clearDisplay();
+            evaluated = false;
         }
 
         //if number input
@@ -71,6 +74,7 @@ keys.forEach(key => {
             }
             
             display.textContent = result.toFixed(2);
+            evaluated = true;
             return;
         }
     })

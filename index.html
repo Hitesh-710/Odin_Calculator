@@ -3,17 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="script.js" defer></script>
+    <script defer src="main.js"></script>
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
     <div class="container">
         <div class="header">Calculator</div>
-        <div class="display" id="display">
-            <div class="dText"></div>
+        <div class="d-container">
+            <div class="display" id="display">
+                <div id="dText"></div>
+            </div>
+            <div class="keys"><-</div>
         </div>
         <div class="keypad">
+            
             <div class="numpad">
                 <div class="keys">1</div>
                 <div class="keys">2</div>
@@ -24,15 +28,18 @@
                 <div class="keys">7</div>
                 <div class="keys">8</div>
                 <div class="keys">9</div>
-                <div class="keys">0</div>
-                <div class="keys">=</div>
-                <div class="keys">C</div>
+                <div class="zero-key keys">0</div>
+                <div class="keys">.</div>
             </div>
             <div class="op-keys">
                 <div class="keys">+</div>
                 <div class="keys">-</div>
                 <div class="keys">*</div>
                 <div class="keys">/</div>
+            </div>
+            <div class="op-keys">
+                <div class="keys double-keys">=</div>
+                <div class="double-keys keys">C</div>
             </div>
         </div>
     </div>

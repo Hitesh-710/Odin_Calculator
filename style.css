@@ -49,6 +49,12 @@ body {
     height: 100vh;
 }
 
+.d-container {
+    display: flex;
+    gap: var(--key-gap);
+    font-family: var(--keypad-font);
+}
+
 .display {
     width: calc(var(--numpad-size) + (var(--numpad-size)/3));
     height: var(--key-size);
@@ -61,13 +67,12 @@ body {
     border-radius: 5px;
     cursor: default;
     user-select: none;
-    letter-spacing: -8px;
     overflow: hidden;
 }
 
-.dText {
+#dText {
     font-family: var(--keypad-font);
-    font-size: 4rem;
+    font-size: 2rem;
     transform: scaleX(0.6);
     letter-spacing: 5px;
 }
@@ -81,6 +86,7 @@ body {
 .numpad {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     width: var(--numpad-size);
     gap: var(--key-gap);
     justify-content: center;
@@ -113,6 +119,10 @@ body {
     transition: all 0.2s ease;
 }
 
+.double-keys {
+    height: calc((var(--key-size)*2) + var(--key-gap));
+}
+
 .zero-key {
     width: calc((var(--key-size)*2) + var(--key-gap));
 }
@@ -122,4 +132,12 @@ body {
     box-shadow: 
         inset 2px 2px 5px rgba(0, 0, 0, 0.7),
         0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+.keys:active {
+    transform: translateY(3px);
+    background: linear-gradient(145deg, #4a4a4c, #3c3c3e);
+    box-shadow: 
+        inset 2px 2px 5px rgba(0, 0, 0, 0.7),
+        0 0 15px rgba(0, 12, 10, 0.4);
 }

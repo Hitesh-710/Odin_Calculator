@@ -7,7 +7,7 @@ keys.forEach(key => {
     key.addEventListener('click', () => {
         const selected = key.textContent;
 
-        if (display.textContent === 'ERROR') {
+        if (display.textContent == 'ERROR') {
             clearDisplay();
         }
 
@@ -105,7 +105,9 @@ document.addEventListener('keydown', (e) => {
 
     if (isNumber || isOperator || isDecimal || isEqual || isDelete || isClear) {
         if (isNumber) {
-            display.textContent += key;
+            keys.forEach(k => {
+                if (k.textContent === key) k.click();
+            });
         } else if (isOperator) {
             keys.forEach(k => {
                 if (k.textContent === key) k.click();
